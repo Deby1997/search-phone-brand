@@ -27,7 +27,7 @@ const displayPhones = phones => {
             <h6 class="card-title">Brand: ${phone.brand}</h6>
             <h6 class="card-title">Slug: ${phone.slug}</h6>
             <div>
-            <button onclick="clickButton('${phone.data}')" type="button" class="btn btn-success">Details</button>
+            <button onclick="clickButton('${phone.slug}')" type="button" class="btn btn-success">Details</button>
         </div>
         </div>
     </div>
@@ -41,31 +41,30 @@ const displayPhones = phones => {
 
 show('iphone');
 // button click for deatail
+// const clickButton=(id)=>{
+//     console.log(id);
+// }
 const clickButton = (id) => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     console.log(url);
     fetch(url)
         .then(res => res.json())
-        .then(data => detailShow(data.phones))
+        .then(data => detailShow(data.data.mainFeatures))
 }
 
-const detailShow = user => {
-    const details = document.getElementById('detail');
-    user.forEach(use => {
-        const div = document.createElement('div');
-        div.innerHTML = `
-        <div class="card h-100">
-        <img src="${use.image}" class="card-img-top p-3" alt="...">
+const detailShow = (user) => {
+    document.getElementById('detail').innerHTML = `
+   
+    <div class="card h-100">
+    <h1 class="text-center">Phone Detail </h1>
         <div class="card-body">
-            <h5 class="card-title">Phone Name: ${use.storage}</h5>
-            <h6 class="card-title">Brand: ${use.storage}</h6>
-            <h6 class="card-title">Slug: ${use.storage}</h6>
+            <h5 class="card-title">Storage: ${user.storage}</h5>
+            <h6 class="card-title">Display Size: ${user.displaySize}</h6>
+            <h6 class="card-title">Chip Set: ${user.chipSet}</h6>
            
         </div>
-    </div>
-       
-        `;
-        details.appendChild(div);
+        </div>
+    
+    `
 
-    })
 }
