@@ -1,8 +1,6 @@
 
-
 const searchPhone = () => {
     const searchText = document.getElementById('input-field').value;
-    //display spinner
 
     show(searchText);
     document.getElementById('input-field').value = '';
@@ -37,13 +35,12 @@ const displayPhones = phones => {
 
     })
 
+
 }
 
 show('iphone');
 // button click for deatail
-// const clickButton=(id)=>{
-//     console.log(id);
-// }
+
 const clickButton = (id) => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     console.log(url);
@@ -61,6 +58,7 @@ const detailShow = (user) => {
             <h5 class="card-title">Storage: ${user.storage}</h5>
             <h6 class="card-title">Display Size: ${user.displaySize}</h6>
             <h6 class="card-title">Chip Set: ${user.chipSet}</h6>
+            <h6 class="card-title">Memory: ${user.memory}</h6>
            
         </div>
         </div>
@@ -68,3 +66,4 @@ const detailShow = (user) => {
     `
 
 }
+
