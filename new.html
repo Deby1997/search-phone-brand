@@ -10,23 +10,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <style>
-        .design {
-            display: grid;
-            grid-row: repeat(3, 1fr);
-            gap: 10px;
-        }
-    </style>
+
 
 </head>
 
-
-
 <body>
+    <h1 class="text-center text-secondary fw-bolder">Search Products</h1>
+    <!-- search option -->
+    <div class="p-3">
+        <div class="input-group container ">
+            <input id="input-field" type="text" class="form-control" placeholder="Search your data"
+                aria-label="Recipient's username with two button addons">
+            <button onclick="searchPhone()" class="btn btn-outline-secondary bg-info text-white"
+                type="button">Search</button>
+
+        </div>
+    </div>
+    <div id="spinner">
+        Please Wait............
+    </div>
+    <!-- phone button detail -->
+    <div class="container" id="detail">
 
     </div>
-    <div id="phones">
 
+    <!-- body part -->
+    <div class="container">
+        <div class=" row row-cols-1 row-cols-md-3 g-4 " id="phones">
+
+
+        </div>
     </div>
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
